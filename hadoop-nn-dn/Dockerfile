@@ -37,6 +37,7 @@ RUN su hduser -c "/usr/local/hadoop/bin/hdfs namenode -format"
 ADD config/start-hadoop.sh $HADOOP_INSTALL/bin/start-hadoop.sh
 RUN chmod 755 $HADOOP_INSTALL/bin/start-hadoop.sh
 
+RUN echo /usr/local/hadoop/bin/start-hadoop.sh >> /etc/bash.bashrc
 # SSH and SERF ports
 EXPOSE 22 7373 7946 
 
